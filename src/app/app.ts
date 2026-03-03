@@ -5,12 +5,15 @@ import { DUMMY_USERS } from './dummy-users';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [Header, User],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
   users = DUMMY_USERS;
+
+  onSelectUser(id: string) {
+    console.log('Selected user: ', id);
+  }
   protected readonly title = signal('my-first-angular-project');
 }
